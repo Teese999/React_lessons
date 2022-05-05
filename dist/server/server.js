@@ -1,0 +1,29 @@
+!function(e){var r={};function t(n){if(r[n])return r[n].exports;var o=r[n]={i:n,l:!1,exports:{}};return e[n].call(o.exports,o,o.exports,t),o.l=!0,o.exports}t.m=e,t.c=r,t.d=function(e,r,n){t.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:n})},t.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},t.t=function(e,r){if(1&r&&(e=t(e)),8&r)return e;if(4&r&&"object"==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(t.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:e}),2&r&&"string"!=typeof e)for(var o in e)t.d(n,o,function(r){return e[r]}.bind(null,o));return n},t.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(r,"a",r),r},t.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},t.p="",t(t.s="./src/server/server.js")}({"./src/server/indexTemplate.js":
+/*!*************************************!*\
+  !*** ./src/server/indexTemplate.js ***!
+  \*************************************/
+/*! no static exports found */function(module,exports,__webpack_require__){"use strict";eval('\nObject.defineProperty(exports, "__esModule", { value: true });\nexports.indexTemplate = void 0;\nexports.indexTemplate = function (content) { return "<!DOCTYPE html>\\n<html lang=\\"en\\">\\n    <head>\\n    <meta charset=\\"UTF-8\\">\\n    <meta http-equiv=\\"X-UA-Compatible\\" content=\\"IE=edge\\">\\n    <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1.0\\">\\n    <title>React-Project</title>\\n    <script src=\\"/static/client.js\\" type=\\"application/javascript\\"><\/script>\\n</head>\\n<body>\\n<div id=\\"react_root\\">" + content + "</div>\\n</body>\\n</html>\\n"; };\n\n\n//# sourceURL=webpack:///./src/server/indexTemplate.js?')},"./src/server/server.js":
+/*!******************************!*\
+  !*** ./src/server/server.js ***!
+  \******************************/
+/*! no static exports found */function(module,exports,__webpack_require__){"use strict";eval('\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { "default": mod };\n};\nObject.defineProperty(exports, "__esModule", { value: true });\nvar express_1 = __importDefault(__webpack_require__(/*! express */ "express"));\nvar server_1 = __importDefault(__webpack_require__(/*! react-dom/server */ "react-dom/server"));\nvar header_1 = __webpack_require__(/*! ../shared/header */ "./src/shared/header.jsx");\nvar indexTemplate_1 = __webpack_require__(/*! ./indexTemplate */ "./src/server/indexTemplate.js");\nvar app = express_1.default();\napp.use(\'/static\', express_1.default.static(\'./dist/client\'));\napp.get(\'/\', function (req, res) {\n    res.send(indexTemplate_1.indexTemplate(server_1.default.renderToString(header_1.Header())));\n});\napp.listen(3000, function () {\n    console.log(\'Server started on http://localhost:3000\');\n});\n\n\n//# sourceURL=webpack:///./src/server/server.js?')},"./src/shared/header.jsx":
+/*!*******************************!*\
+  !*** ./src/shared/header.jsx ***!
+  \*******************************/
+/*! no static exports found */function(module,exports,__webpack_require__){"use strict";eval('\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\n    if (k2 === undefined) k2 = k;\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\n}) : (function(o, m, k, k2) {\n    if (k2 === undefined) k2 = k;\n    o[k2] = m[k];\n}));\nvar __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {\n    Object.defineProperty(o, "default", { enumerable: true, value: v });\n}) : function(o, v) {\n    o["default"] = v;\n});\nvar __importStar = (this && this.__importStar) || function (mod) {\n    if (mod && mod.__esModule) return mod;\n    var result = {};\n    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);\n    __setModuleDefault(result, mod);\n    return result;\n};\nObject.defineProperty(exports, "__esModule", { value: true });\nexports.Header = exports.HeaderComponent = void 0;\nvar root_1 = __webpack_require__(/*! react-hot-loader/root */ "react-hot-loader/root");\nvar React = __importStar(__webpack_require__(/*! react */ "react"));\nfunction HeaderComponent() {\n    return (React.createElement("header", null,\n        React.createElement("h1", null, "Hello React")));\n}\nexports.HeaderComponent = HeaderComponent;\nexports.Header = root_1.hot(HeaderComponent);\n\n\n//# sourceURL=webpack:///./src/shared/header.jsx?')},express:
+/*!**************************!*\
+  !*** external "express" ***!
+  \**************************/
+/*! no static exports found */function(module,exports){eval('module.exports = require("express");\n\n//# sourceURL=webpack:///external_%22express%22?')},react:
+/*!************************!*\
+  !*** external "react" ***!
+  \************************/
+/*! no static exports found */function(module,exports){eval('module.exports = require("react");\n\n//# sourceURL=webpack:///external_%22react%22?')},"react-dom/server":
+/*!***********************************!*\
+  !*** external "react-dom/server" ***!
+  \***********************************/
+/*! no static exports found */function(module,exports){eval('module.exports = require("react-dom/server");\n\n//# sourceURL=webpack:///external_%22react-dom/server%22?')},"react-hot-loader/root":
+/*!****************************************!*\
+  !*** external "react-hot-loader/root" ***!
+  \****************************************/
+/*! no static exports found */function(module,exports){eval('module.exports = require("react-hot-loader/root");\n\n//# sourceURL=webpack:///external_%22react-hot-loader/root%22?')}});
